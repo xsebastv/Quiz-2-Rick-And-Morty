@@ -8,12 +8,14 @@ const CharactersView = () => {
   const [characters, setCharacters] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
+  const [totalCount, setTotalCount] = useState(0);
 
   useEffect(() => {
     const loadCharacters = async () => {
       try {
         const data = await controller.loadCharacters();
         setCharacters(data);
+        setTotalCount(826); // Número total de personajes en la API de Rick & Morty
         setError(null);
       } catch (err) {
         setError(err.message);
@@ -67,7 +69,10 @@ const CharactersView = () => {
     <div className="characters-view">
       <div className="view-header">
         <h2>Personajes Principales</h2>
-        <p>Los primeros 5 personajes de Rick and Morty</p>
+        <p>
+          {characters.length} de {totalCount} personajes cargados
+          {characters.length < totalCount && ' (scroll para cargar más)'}
+        </p>
       </div>
       <div className="characters-grid">
         {characters.map((character) => (
