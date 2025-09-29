@@ -1,0 +1,235 @@
+.location-detail-view {
+  padding: 2rem 1rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  min-height: 100vh;
+  background: linear-gradient(135deg, #e6fffa 0%, #e0f2fe 100%);
+}
+
+.back-button {
+  background: linear-gradient(135deg, #38b2ac 0%, #3182ce 100%);
+  color: white;
+  border: none;
+  padding: 0.8rem 1.5rem;
+  border-radius: 12px;
+  cursor: pointer;
+  font-weight: 600;
+  margin-bottom: 2rem;
+  transition: all 0.3s ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  box-shadow: 0 4px 12px rgba(56, 178, 172, 0.3);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.back-button:hover {
+  background: linear-gradient(135deg, #2c9a94 0%, #2b6cb0 100%);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(56, 178, 172, 0.4);
+}
+
+.location-hero {
+  position: relative;
+  border-radius: 20px;
+  overflow: hidden;
+  margin-bottom: 3rem;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+  border: 2px solid rgba(255, 255, 255, 0.2);
+}
+
+.location-hero-image {
+  width: 100%;
+  height: clamp(300px, 40vw, 450px);
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.location-hero:hover .location-hero-image {
+  transform: scale(1.05);
+}
+
+.location-hero-overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: linear-gradient(to top, rgba(0,0,0,0.9), rgba(0,0,0,0.4), transparent);
+  color: white;
+  padding: 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+}
+
+.location-title {
+  font-size: 2.5rem;
+  font-weight: bold;
+  margin: 0;
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.7);
+}
+
+.location-type-badge {
+  background: rgba(102, 126, 234, 0.9);
+  padding: 0.5rem 1rem;
+  border-radius: 25px;
+  font-weight: 600;
+  font-size: 1rem;
+  backdrop-filter: blur(10px);
+}
+
+.location-content {
+  margin-top: 2rem;
+}
+
+.location-info-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+}
+
+.info-card {
+  background: white;
+  border-radius: 12px;
+  padding: 2rem;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  border: 1px solid #e2e8f0;
+}
+
+.info-card h3 {
+  color: #2c3e50;
+  font-size: 1.3rem;
+  margin-bottom: 1.5rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.info-item {
+  margin-bottom: 1rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid #f1f5f9;
+}
+
+.info-item strong {
+  color: #4a5568;
+  display: inline-block;
+  min-width: 100px;
+}
+
+.residents-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.resident-card {
+  background: #f8fafc;
+  border-radius: 8px;
+  padding: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  transition: transform 0.2s ease;
+}
+
+.resident-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.resident-image {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.resident-info h4 {
+  margin: 0 0 0.2rem 0;
+  color: #2c3e50;
+  font-size: 0.9rem;
+}
+
+.resident-info p {
+  margin: 0;
+  color: #64748b;
+  font-size: 0.8rem;
+}
+
+.residents-note {
+  grid-column: 1 / -1;
+  text-align: center;
+  color: #64748b;
+  font-style: italic;
+  margin-top: 1rem;
+}
+
+.loading,
+.error {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 400px;
+  text-align: center;
+  padding: 2rem;
+  border-radius: 12px;
+}
+
+.loading {
+  background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+  color: #667eea;
+}
+
+.error {
+  background: linear-gradient(135deg, #fef2f2 0%, #fee2e2 100%);
+  border: 2px solid #fecaca;
+  color: #dc2626;
+}
+
+.loading-spinner {
+  width: 40px;
+  height: 40px;
+  border: 4px solid #e2e8f0;
+  border-top: 4px solid #667eea;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+  margin-bottom: 1rem;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .location-detail-view {
+    padding: 1rem 0.5rem;
+  }
+  
+  .location-hero-image {
+    height: 250px;
+  }
+  
+  .location-title {
+    font-size: 1.8rem;
+  }
+  
+  .location-info-grid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+  
+  .residents-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .location-hero-overlay {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+  }
+}

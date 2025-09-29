@@ -1,0 +1,72 @@
+.character-card {
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(20px);
+  border-radius: 20px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.15);
+  overflow: hidden;
+  transition: all 0.3s ease;
+  margin-bottom: 1.5rem;
+  cursor: pointer;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.character-card:hover {
+  transform: translateY(-8px) scale(1.02);
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.25);
+}
+
+.character-image {
+  width: 100%;
+  height: 250px;
+  object-fit: cover;
+}
+
+.character-info {
+  padding: 1.5rem;
+}
+
+.character-name {
+  margin: 0 0 1rem 0;
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #2c3e50;
+}
+
+.character-details {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+}
+
+.status-container {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.status-indicator {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+}
+
+.status-text {
+  font-weight: 600;
+  text-transform: capitalize;
+}
+
+.character-species,
+.character-gender,
+.character-origin,
+.character-created {
+  margin: 0;
+  color: #555;
+  font-size: 0.95rem;
+}
+
+.character-species strong,
+.character-gender strong,
+.character-origin strong,
+.character-created strong {
+  color: #2c3e50;
+}

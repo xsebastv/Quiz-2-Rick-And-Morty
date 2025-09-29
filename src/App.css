@@ -1,0 +1,20 @@
+#root {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 1rem;
+}
+
+.app {
+  min-height: 100vh;
+}
+
+.main-content {
+  margin-top: 1rem;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  #root {
+    padding: 0.5rem;
+  }
+}
