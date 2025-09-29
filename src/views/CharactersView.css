@@ -1,32 +1,49 @@
 .characters-view {
   padding: 2rem 1rem;
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
   min-height: 100vh;
+  background: transparent;
 }
 
 .view-header {
   text-align: center;
   margin-bottom: 3rem;
   padding: 0 1rem;
+  position: relative;
 }
 
 .view-header h2 {
-  color: #ffffff;
-  font-size: clamp(2rem, 5vw, 3rem);
+  font-family: 'Orbitron', monospace;
+  font-size: clamp(2rem, 5vw, 2.5rem);
   font-weight: 900;
   margin-bottom: 1rem;
-  text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
-  background: linear-gradient(45deg, #f093fb, #f5576c, #4facfe);
+  background: linear-gradient(45deg, var(--rick-green), var(--neon-cyan));
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
+  text-shadow: 0 0 15px rgba(68, 211, 98, 0.3);
   line-height: 1.2;
+  position: relative;
+  display: inline-block;
+  margin: 0 auto 1rem;
+}
+
+.view-header h2::after {
+  content: '';
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80px;
+  height: 3px;
+  background: var(--rick-green);
+  border-radius: 3px;
+  box-shadow: 0 0 10px var(--rick-green);
 }
 
 .view-header p {
-  color: rgba(255, 255, 255, 0.95);
-  font-size: clamp(1rem, 2.5vw, 1.2rem);
-  margin: 0;
+  color: var(--text-secondary);
+  font-size: clamp(1rem, 2.5vw, 1.1rem);
+  margin: 1.5rem 0 0;
   font-weight: 500;
   line-height: 1.4;
 }
@@ -48,23 +65,27 @@
   min-height: 300px;
   text-align: center;
   padding: 2rem;
-  margin: 2rem 1rem;
-  border-radius: 12px;
+  margin: 2rem auto;
+  border-radius: 20px;
+  max-width: 600px;
 }
 
 .loading {
-  background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
-  color: #667eea;
+  background: rgba(68, 211, 98, 0.05);
+  border: 2px solid rgba(68, 211, 98, 0.2);
+  color: var(--rick-green);
+  box-shadow: 0 10px 30px var(--shadow-color);
 }
 
 .loading-spinner {
-  width: 40px;
-  height: 40px;
-  border: 4px solid #e2e8f0;
-  border-top: 4px solid #667eea;
+  width: 50px;
+  height: 50px;
+  border: 4px solid rgba(68, 211, 98, 0.1);
+  border-top: 4px solid var(--rick-green);
   border-radius: 50%;
-  animation: spin 1s linear infinite;
+  animation: spin 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;
   margin-bottom: 1rem;
+  box-shadow: 0 0 20px rgba(68, 211, 98, 0.5);
 }
 
 @keyframes spin {
@@ -73,21 +94,31 @@
 }
 
 .error {
-  background: linear-gradient(135deg, #fef2f2 0%, #fee2e2 100%);
-  border: 2px solid #fecaca;
-  color: #dc2626;
+  background: rgba(220, 38, 38, 0.1);
+  border: 2px solid rgba(220, 38, 38, 0.3);
+  color: #ef4444;
+  border-radius: 20px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
 }
 
 .retry-button {
-  margin-top: 1rem;
-  background: #dc2626;
+  margin-top: 1.5rem;
+  background: linear-gradient(135deg, #ef4444, #b91c1c);
   color: white;
   border: none;
   padding: 0.8rem 1.5rem;
-  border-radius: 8px;
+  border-radius: 12px;
   font-weight: 600;
   cursor: pointer;
-  transition: background 0.3s ease;
+  transition: all 0.3s ease;
+  box-shadow: 0 8px 20px rgba(239, 68, 68, 0.3);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.retry-button:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 12px 25px rgba(239, 68, 68, 0.4);
 }
 
 .retry-button:hover {

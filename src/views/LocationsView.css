@@ -1,31 +1,49 @@
 .locations-view {
   padding: 2rem 0;
   min-height: 100vh;
-  background: linear-gradient(135deg, #e6fffa 0%, #e0f2fe 100%);
+  background: transparent;
 }
 
 .view-header {
   text-align: center;
   margin-bottom: 3rem;
   padding: 0 1rem;
+  position: relative;
 }
 
 .view-header h2 {
-  color: #1a202c;
+  font-family: 'Orbitron', monospace;
   font-size: clamp(2rem, 5vw, 2.5rem);
-  font-weight: 800;
+  font-weight: 900;
   margin-bottom: 1rem;
-  background: linear-gradient(45deg, #38b2ac, #3182ce);
+  background: linear-gradient(45deg, var(--portal-blue), var(--neon-cyan));
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
+  text-shadow: 0 0 15px rgba(0, 168, 204, 0.3);
   line-height: 1.2;
+  position: relative;
+  display: inline-block;
+  margin: 0 auto 1rem;
+}
+
+.view-header h2::after {
+  content: '';
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80px;
+  height: 3px;
+  background: var(--portal-blue);
+  border-radius: 3px;
+  box-shadow: 0 0 10px var(--portal-blue);
 }
 
 .view-header p {
-  color: #4a5568;
+  color: var(--text-secondary);
   font-size: clamp(1rem, 2.5vw, 1.1rem);
-  margin: 0;
+  margin: 1.5rem 0 0;
   font-weight: 500;
   line-height: 1.4;
 }
@@ -49,18 +67,20 @@
 }
 
 .loading-more .loading-spinner {
-  width: 30px;
-  height: 30px;
-  border: 3px solid #e2e8f0;
-  border-top: 3px solid #667eea;
+  width: 35px;
+  height: 35px;
+  border: 3px solid rgba(0, 168, 204, 0.1);
+  border-top: 3px solid var(--portal-blue);
   border-radius: 50%;
-  animation: spin 1s linear infinite;
+  animation: spin 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;
   margin-bottom: 1rem;
+  box-shadow: 0 0 15px rgba(0, 168, 204, 0.3);
 }
 
 .loading-more p {
-  color: #667eea;
+  color: var(--portal-blue);
   font-size: 0.9rem;
+  font-weight: 500;
 }
 
 .loading,
@@ -72,13 +92,16 @@
   min-height: 300px;
   text-align: center;
   padding: 2rem;
-  margin: 2rem 1rem;
-  border-radius: 12px;
+  margin: 2rem auto;
+  border-radius: 20px;
+  max-width: 600px;
 }
 
 .loading {
-  background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
-  color: #667eea;
+  background: rgba(0, 168, 204, 0.05);
+  border: 2px solid rgba(0, 168, 204, 0.2);
+  color: var(--portal-blue);
+  box-shadow: 0 10px 30px var(--shadow-color);
 }
 
 .loading-spinner {
