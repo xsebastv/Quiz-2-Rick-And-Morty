@@ -6,17 +6,18 @@
   font-weight: 400;
 
   /* Light Theme (Default) */
-  --rick-green-light: #3a8f4d;
-  --morty-yellow-light: #f4d03f;
-  --portal-blue-light: #008c9e;
-  --space-purple-light: #5a4fcf;
+  --rick-green: #3a8f4d;
+  --morty-yellow: #f4d03f;
+  --portal-blue: #008c9e;
+  --space-purple: #5a4fcf;
   --bg-primary: #f8fafc;
   --bg-secondary: #ffffff;
   --card-bg: #ffffff;
   --text-primary: #213547;
   --text-secondary: #555;
-  --accent-pink-light: #e65286;
-  --neon-cyan-light: #007b7b;
+  --accent-pink: #e65286;
+  --accent-red: #ff4d4d;
+  --neon-cyan: #007b7b;
   --border-color: rgba(0, 0, 0, 0.1);
   --shadow-color: rgba(0, 0, 0, 0.1);
   --gradient-start: #f8fafc;
@@ -49,6 +50,7 @@
     --text-primary: #ffffff;
     --text-secondary: #b0bec5;
     --accent-pink: #ff6b9d;
+    --accent-red: #ff4d4d;
     --neon-cyan: #00ffff;
     --border-color: rgba(255, 255, 255, 0.1);
     --shadow-color: rgba(0, 0, 0, 0.3);
@@ -76,7 +78,7 @@ body {
   margin: 0;
   min-width: 320px;
   min-height: 100vh;
-  background: linear-gradient(135deg, var(--dark-bg) 0%, var(--darker-bg) 100%);
+  background: linear-gradient(135deg, var(--bg-primary) 0%, var(--bg-secondary) 100%);
   background-attachment: fixed;
   overflow-x: hidden;
 }

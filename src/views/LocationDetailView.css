@@ -3,13 +3,14 @@
   max-width: 1200px;
   margin: 0 auto;
   min-height: 100vh;
-  background: linear-gradient(135deg, #e6fffa 0%, #e0f2fe 100%);
+  background: transparent;
+  color: var(--text-primary);
 }
 
 .back-button {
-  background: linear-gradient(135deg, #38b2ac 0%, #3182ce 100%);
-  color: white;
-  border: none;
+  background: linear-gradient(135deg, var(--portal-blue), var(--neon-cyan));
+  color: var(--text-primary);
+  border: 2px solid var(--portal-blue);
   padding: 0.8rem 1.5rem;
   border-radius: 12px;
   cursor: pointer;
@@ -19,14 +20,14 @@
   display: inline-flex;
   align-items: center;
   gap: 0.5rem;
-  box-shadow: 0 4px 12px rgba(56, 178, 172, 0.3);
-  border: 1px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 0 4px 15px rgba(0, 168, 204, 0.3);
+  text-transform: uppercase;
 }
 
 .back-button:hover {
-  background: linear-gradient(135deg, #2c9a94 0%, #2b6cb0 100%);
-  transform: translateY(-2px);
-  box-shadow: 0 6px 16px rgba(56, 178, 172, 0.4);
+  transform: translateY(-3px);
+  box-shadow: 0 8px 25px rgba(0, 168, 204, 0.4);
+  border-color: var(--neon-cyan);
 }
 
 .location-hero {
@@ -34,8 +35,8 @@
   border-radius: 20px;
   overflow: hidden;
   margin-bottom: 3rem;
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
-  border: 2px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 0 20px 50px var(--shadow-color);
+  border: 2px solid var(--portal-blue);
 }
 
 .location-hero-image {

@@ -50,10 +50,11 @@
 
 .characters-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-  gap: 2rem;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2.5rem;
   max-width: 1400px;
   margin: 0 auto;
+  padding: 0 1rem;
 }
 
 .loading,
@@ -94,16 +95,16 @@
 }
 
 .error {
-  background: rgba(220, 38, 38, 0.1);
-  border: 2px solid rgba(220, 38, 38, 0.3);
-  color: #ef4444;
+  background: rgba(255, 51, 51, 0.05);
+  border: 2px solid rgba(255, 51, 51, 0.2);
+  color: var(--accent-pink);
   border-radius: 20px;
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 10px 30px var(--shadow-color);
 }
 
 .retry-button {
   margin-top: 1.5rem;
-  background: linear-gradient(135deg, #ef4444, #b91c1c);
+  background: linear-gradient(135deg, var(--accent-pink), var(--accent-red));
   color: white;
   border: none;
   padding: 0.8rem 1.5rem;
@@ -111,18 +112,14 @@
   font-weight: 600;
   cursor: pointer;
   transition: all 0.3s ease;
-  box-shadow: 0 8px 20px rgba(239, 68, 68, 0.3);
+  box-shadow: 0 5px 15px rgba(255, 51, 51, 0.2);
   text-transform: uppercase;
   letter-spacing: 0.5px;
 }
 
 .retry-button:hover {
   transform: translateY(-3px);
-  box-shadow: 0 12px 25px rgba(239, 68, 68, 0.4);
-}
-
-.retry-button:hover {
-  background: #b91c1c;
+  box-shadow: 0 8px 20px rgba(255, 51, 51, 0.4);
 }
 
 /* Responsive design */

@@ -3,13 +3,14 @@
   max-width: 1200px;
   margin: 0 auto;
   min-height: 100vh;
-  background: linear-gradient(135deg, #f8fafc 0%, #edf2f7 100%);
+  background: transparent;
+  color: var(--text-primary);
 }
 
 .back-button {
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-  color: white;
-  border: none;
+  background: linear-gradient(135deg, var(--morty-yellow), var(--accent-pink));
+  color: var(--text-primary);
+  border: 2px solid var(--morty-yellow);
   padding: 0.8rem 1.5rem;
   border-radius: 12px;
   cursor: pointer;
@@ -19,14 +20,14 @@
   display: inline-flex;
   align-items: center;
   gap: 0.5rem;
-  box-shadow: 0 4px 12px rgba(102, 126, 234, 0.3);
-  border: 1px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 0 4px 15px rgba(244, 208, 63, 0.3);
+  text-transform: uppercase;
 }
 
 .back-button:hover {
-  background: linear-gradient(135deg, #5a6fd8 0%, #6b5b95 100%);
-  transform: translateY(-2px);
-  box-shadow: 0 6px 16px rgba(102, 126, 234, 0.4);
+  transform: translateY(-3px);
+  box-shadow: 0 8px 25px rgba(244, 208, 63, 0.4);
+  border-color: var(--accent-pink);
 }
 
 .episode-hero {
@@ -34,8 +35,8 @@
   border-radius: 20px;
   overflow: hidden;
   margin-bottom: 3rem;
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
-  border: 2px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 0 20px 50px var(--shadow-color);
+  border: 2px solid var(--morty-yellow);
 }
 
 .episode-hero-image {
