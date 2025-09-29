@@ -1,11 +1,27 @@
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Inter:wght@300;400;500;600;700&display=swap');
+
 :root {
   font-family: 'Inter', system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
   font-weight: 400;
 
-  color-scheme: light;
-  color: #213547;
-  background-color: #f8fafc;
+  color-scheme: dark;
+  
+  /* Rick and Morty Color Palette */
+  --rick-green: #44d362;
+  --morty-yellow: #f4d03f;
+  --portal-blue: #00a8cc;
+  --space-purple: #6c5ce7;
+  --dark-bg: #0f0f23;
+  --darker-bg: #0a0a1a;
+  --card-bg: #1e1e2f;
+  --text-primary: #ffffff;
+  --text-secondary: #b0bec5;
+  --accent-pink: #ff6b9d;
+  --neon-cyan: #00ffff;
+  
+  color: var(--text-primary);
+  background: linear-gradient(135deg, var(--dark-bg) 0%, var(--darker-bg) 100%);
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
@@ -30,34 +46,83 @@ body {
   margin: 0;
   min-width: 320px;
   min-height: 100vh;
+  background: linear-gradient(135deg, var(--dark-bg) 0%, var(--darker-bg) 100%);
+  background-attachment: fixed;
+  overflow-x: hidden;
+}
+
+body::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: 
+    radial-gradient(circle at 20% 80%, var(--rick-green) 0%, transparent 50%),
+    radial-gradient(circle at 80% 20%, var(--portal-blue) 0%, transparent 50%),
+    radial-gradient(circle at 40% 40%, var(--space-purple) 0%, transparent 50%);
+  opacity: 0.1;
+  z-index: -1;
+  pointer-events: none;
 }
 
 h1 {
+  font-family: 'Orbitron', monospace;
   font-size: 2.5em;
   line-height: 1.1;
-  color: #2c3e50;
+  color: var(--rick-green);
+  text-shadow: 0 0 20px rgba(68, 211, 98, 0.5);
+  font-weight: 900;
 }
 
 h2, h3 {
-  color: #2c3e50;
+  font-family: 'Orbitron', monospace;
+  color: var(--text-primary);
+  font-weight: 700;
+}
+
+h2 {
+  text-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
 }
 
 button {
-  border-radius: 8px;
-  border: 1px solid transparent;
-  padding: 0.6em 1.2em;
+  border-radius: 12px;
+  border: 2px solid var(--rick-green);
+  padding: 0.8em 1.5em;
   font-size: 1em;
-  font-weight: 500;
-  font-family: inherit;
-  background-color: #667eea;
-  color: white;
+  font-weight: 600;
+  background: linear-gradient(135deg, var(--rick-green), var(--portal-blue));
+  color: var(--text-primary);
   cursor: pointer;
-  transition: all 0.25s ease;
+  transition: all 0.3s ease;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  position: relative;
+  overflow: hidden;
+  font-family: 'Inter', sans-serif;
+  box-shadow: 0 4px 15px rgba(68, 211, 98, 0.3);
+}
+
+button::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+  transition: left 0.5s ease;
 }
 
 button:hover {
-  background-color: #5a67d8;
-  transform: translateY(-2px);
+  transform: translateY(-3px);
+  box-shadow: 0 8px 25px rgba(68, 211, 98, 0.4);
+  border-color: var(--neon-cyan);
+}
+
+button:hover::before {
+  left: 100%;
 }
 
 button:focus,
