@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import LocationService from '../services/LocationService.js';
 import CharacterService from '../services/CharacterService.js';
+import imagesData from '../data/images.json';
 import './LocationDetailView.css';
 
 const LocationDetailView = () => {
@@ -42,7 +43,14 @@ const LocationDetailView = () => {
     loadLocationDetail();
   }, [id]);
 
-  const getLocationImage = (locationType) => {
+  const getLocationImage = (location) => {
+    // Buscar primero en el JSON de imágenes
+    const locationData = imagesData.locations.find(loc => loc.id === parseInt(id));
+    if (locationData?.image) {
+      return locationData.image;
+    }
+    
+    // Si no se encuentra en el JSON, usar un mapa de tipos de ubicación
     const imageMap = {
       'Planet': 'https://images.unsplash.com/photo-1502134249126-9f3755a50d78?w=800&h=400&fit=crop&crop=entropy&auto=format&q=80',
       'Space station': 'https://images.unsplash.com/photo-1483519076816-80a45b5b92c5?w=800&h=400&fit=crop&crop=entropy&auto=format&q=80',
@@ -53,7 +61,7 @@ const LocationDetailView = () => {
       'unknown': 'https://images.unsplash.com/photo-1446776653964-20c1d3a81b06?w=800&h=400&fit=crop&crop=entropy&auto=format&q=80'
     };
     
-    return imageMap[locationType] || imageMap['Planet'];
+    return imageMap[location.type] || imageMap['Planet'];
   };
 
   if (loading) {
@@ -101,7 +109,7 @@ const LocationDetailView = () => {
       
       <div className="location-hero">
         <img 
-          src={getLocationImage(location.type)} 
+          src={getLocationImage(location)} 
           alt={location.name}
           className="location-hero-image"
         />

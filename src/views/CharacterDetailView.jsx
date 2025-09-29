@@ -108,10 +108,18 @@ const CharacterDetailView = () => {
            'https://images.unsplash.com/photo-1574375927938-d5a98e8ffe85?w=800&h=400&fit=crop&q=80&auto=format&blend=70249f&sat=-100&exp=15&usm=12&bg=131417';
   };
 
-  const generateLocationImage = (location) => {
+  const getLocationImage = (location) => {
+    // Usar el JSON de imágenes para obtener la imagen correcta
+    const locationData = imagesData.locations.find(loc => loc.id === location.id);
+    if (locationData?.image) {
+      return locationData.image;
+    }
+    
+    // Imagen fallback si no se encuentra en el JSON
     const keywords = ['alien-world', 'planet', 'space', 'dimension'];
     const keyword = keywords[location.id % keywords.length];
-    return `https://images.unsplash.com/600x300/?random=${location.id}&${keyword}`;
+    return `https://rickandmortyapi.com/api/location/avatar/${location.id}.jpeg` || 
+           `https://images.unsplash.com/600x300/?random=${location.id}&${keyword}`;
   };
 
   const handleEpisodeClick = (episodeId) => {
@@ -222,7 +230,7 @@ const CharacterDetailView = () => {
                 <h4>Origen</h4>
                 <div className="location-card">
                   <img 
-                    src={generateLocationImage(origin)} 
+                    src={getLocationImage(origin)} 
                     alt={origin.name}
                     className="location-mini-image"
                   />
@@ -243,7 +251,7 @@ const CharacterDetailView = () => {
                 <h4>Ubicación Actual</h4>
                 <div className="location-card">
                   <img 
-                    src={generateLocationImage(location)} 
+                    src={getLocationImage(location)} 
                     alt={location.name}
                     className="location-mini-image"
                   />
