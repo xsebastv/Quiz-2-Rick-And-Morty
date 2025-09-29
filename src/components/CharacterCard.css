@@ -81,16 +81,23 @@
 }
 
 .status-indicator {
-  width: 12px;
-  height: 12px;
-  border-radius: 50%;
+  padding: 0.3em 0.8em;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
   box-shadow: 0 0 10px currentColor;
   animation: pulse 2s infinite;
+  display: inline-block;
+  text-align: center;
 }
 
 .status-text {
   font-weight: 600;
   text-transform: capitalize;
+  color: var(--text-primary);
+  text-shadow: 0 0 5px currentColor;
 }
 
 .character-species,
@@ -98,13 +105,21 @@
 .character-origin,
 .character-created {
   margin: 0;
-  color: #555;
-  font-size: 0.95rem;
+  color: var(--text-secondary);
+  font-size: 1rem;
+  padding: 0.5rem 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .character-species strong,
 .character-gender strong,
 .character-origin strong,
 .character-created strong {
-  color: #2c3e50;
+  color: var(--rick-green);
+  text-shadow: 0 0 5px rgba(68, 211, 98, 0.5);
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 1; transform: scale(1); box-shadow: 0 0 10px currentColor; }
+  50% { opacity: 0.8; transform: scale(1.05); box-shadow: 0 0 15px currentColor; }
 }

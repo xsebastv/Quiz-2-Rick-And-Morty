@@ -21,9 +21,13 @@ const CharacterCard = ({ character }) => {
           <div className="status-container">
             <span 
               className="status-indicator"
-              style={{ backgroundColor: character.getStatusColor() }}
-            ></span>
-            <span className="status-text">{character.status}</span>
+              style={{ 
+                backgroundColor: character.getStatusColor(),
+                color: character.status === 'unknown' ? '#000' : '#fff'
+              }}
+            >
+              {character.status}
+            </span>
           </div>
           <p className="character-species">
             <strong>Especie:</strong> {character.species}
